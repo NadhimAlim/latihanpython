@@ -1,0 +1,44 @@
+daftarkontak = []
+
+while True:
+    print("Menu")
+    print("1.Daftar Kontak")
+    print("2.Tambah Kontak")
+    print("3.Hapus Kontak")
+    print("4.Cari Kontak")
+    
+    menu = input("Pilih Menu yang Anda Inginkan : ")
+    print(menu)    
+    
+    if menu == "1":
+        #Daftar Kontak
+        print("Daftar Kontak")
+        for kontak in daftarkontak:
+            print(kontak)
+    elif menu == "2":
+        print("Tambah Kontak")
+        nama = input("Masukkan Nama Kontak : ")
+        nomor = input("Masukkan Nomor Kontak : ")
+        kontakbaru = {"Nama" : nama, "Nomor Telepon" : nomor }
+        daftarkontak.append(kontakbaru)
+        print("Kontak Berhasil Ditambahkan")
+    elif menu == "3":
+        namahapus = input("Masukkan Nama Kontak yang ingin dihapus : ")
+        for kontak in daftarkontak:
+            if kontak["Nama"] == namahapus:
+                daftarkontak.remove(kontak)
+                print("Kontak Berhasil dihapus")
+                break
+            else:
+                print("Kontak tidak ditemukan")
+    elif menu == "4":
+        caridata = input("Masukkan Nama Kontak yang ingin dicari : ")
+        for kontak in daftarkontak:
+            if kontak["Nama"] == caridata:
+                print("Kontak ditemukan")
+                print(kontak)
+                break
+            else:
+                print("Kontak Tidak diutemukan")
+    else:
+        print("Program tidak ADA")
